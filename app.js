@@ -2,14 +2,14 @@
 Ext.application({
     name: 'Sencha',
 
-    launch: function() {
+    launch: function () {
 
         Ext.create('Ext.data.TreeStore', {
             storeId: 'TreeStore',
             fields: ['title', 'link', 'author', 'contentSnippet', 'content', {
-                name: 'leaf',
-                defaultValue: true
-            }],
+                    name: 'leaf',
+                    defaultValue: true
+                }],
             root: {
                 leaf: false
             },
@@ -19,9 +19,9 @@ Ext.application({
                 reader: {
                     type: 'json',
                     rootProperty: 'responseData.feed.entries'
-                }
+                } 
             }
-        });        
+        });
         Ext.create("Ext.tab.Panel", {
             fullscreen: true,
             tabBarPosition: 'bottom',
@@ -54,7 +54,7 @@ Ext.application({
                     },
 
                     listeners: {
-                        itemtap: function(nestedList, list, index, element, post) {
+                        itemtap: function (nestedList, list, index, element, post) {
                             this.getDetailCard().setHtml(post.get('content'));
                         }
                     }
@@ -92,7 +92,7 @@ Ext.application({
                             xtype: 'button',
                             text: 'Send',
                             ui: 'confirm',
-                            handler: function() {
+                            handler: function () {
                                 this.up('formpanel').submit();
                             }
                         }
