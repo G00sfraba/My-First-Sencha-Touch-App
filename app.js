@@ -9,7 +9,7 @@ Ext.application({
             fields: ['title', 'link', 'author', 'contentSnippet', 'content', {
                     name: 'leaf',
                     defaultValue: true
-                }],
+                }], 
             root: {
                 leaf: false
             },
